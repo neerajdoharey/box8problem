@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require_relative 'loader'
+
+products = JSON.parse(File.read("src/cart_items.json"))
+runner = Runner.new(CommandLineParser.parse(ARGV), products)
+runner.run
+
