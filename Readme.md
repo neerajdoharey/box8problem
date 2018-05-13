@@ -4,9 +4,10 @@ Assumimg you have ruby installed type the following in a bash terminal.
 
 ```$ bundle install```
 
-```$ ./run_discount -c BOX8LOVE -i 7 -o output```
+```$ ./run_discount -c BOX8LOVE -i 7 -o output.json```
 
 ** Command line arguments
+
  -c coupon code
  -i outlet id
  -o filename (if you want to save the output in the file)

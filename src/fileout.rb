@@ -3,7 +3,7 @@ class Fileout
     @file_name = file_name
   end
 
-  def print(message)
+  def write(message)
     File.open(@file_name, "w") do |file| 
       file.write(message) 
     end

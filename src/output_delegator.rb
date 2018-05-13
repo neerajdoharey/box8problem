@@ -4,6 +4,6 @@ class OutputDelegator
   end
   
   def print(message)
-    @output.print message
+    @output.write message
   end
 end

@@ -4,7 +4,7 @@ require 'tempfile'
 describe Fileout do
   it "Should write to a file" do
     file = Tempfile.new("output")
-    Fileout.new(file).print("Quick Brown Fox")
+    Fileout.new(file).write("Quick Brown Fox")
 
     File.read(file).must_equal "Quick Brown Fox"
   end
