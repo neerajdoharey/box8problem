@@ -1,8 +1,8 @@
 require_relative "support/spec_helper"
 
 describe Coupons do
-	before do
-		@json = JSON.parse('{
+  before do
+    @json = JSON.parse('{
       "id": 1,
       "code": "BOX8LOVE",
       "type": "Percentage",
@@ -15,13 +15,13 @@ describe Coupons do
       "minimum_delivery_amount_after_discount": 150,
       "maximum_discount": 200
     }')
-	end
+  end
 
-	it "Should create queriable Percentage discount coupon objects" do
-		coupon = Coupons.create(@json)
-		coupon.must_respond_to(:id)
-		coupon.must_respond_to(:type)
-		coupon.must_respond_to(:code)
-		coupon.must_respond_to(:active)
-	end
+  it "Should create queriable Percentage discount coupon objects" do
+    coupon = Coupons.create(@json)
+    coupon.must_respond_to(:id)
+    coupon.must_respond_to(:type)
+    coupon.must_respond_to(:code)
+    coupon.must_respond_to(:active)
+  end
 end

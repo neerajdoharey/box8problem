@@ -1,5 +1,5 @@
 class DiscountCashback < Coupons 
-	def discount
-		total_cost - value
-	end
+  def discount
+    total_cost - value
+  end
 end
