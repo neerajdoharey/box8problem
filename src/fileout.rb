@@ -4,8 +4,8 @@ class Fileout
   end
 
   def write(message)
-    File.open(@file_name, "w") do |file| 
-      file.write(message) 
+    File.open(@file_name, 'w') do |file|
+      file.write(message)
     end
   end
 end

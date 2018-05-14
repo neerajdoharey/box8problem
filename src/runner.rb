@@ -31,5 +31,6 @@ class Runner
   end
 
   private
+
   attr_reader :options, :products, :cart
 end

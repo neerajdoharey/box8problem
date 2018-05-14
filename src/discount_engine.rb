@@ -1,5 +1,5 @@
 class DiscountEngine
-  URI = "config/discount.yml"
+  URI = 'config/discount.yml'.freeze
 
   def calculate_discount(cart, discount_code, outlet_id)
     @cart = cart
@@ -34,11 +34,19 @@ class DiscountEngine
   end
 
   def date_valid?
-    Date.today >= Date.parse(coupon.start_date) && Date.today <= Date.parse(coupon.end_date)
+    (start_date..end_date).cover?(Date.today)
+  end
+
+  def start_date
+    Date.parse(coupon.start_date)
+  end
+
+  def end_date
+    Date.parse(coupon.end_date)
   end
 
   def coupon_applicable?
-    active_coupon? && date_valid? 
+    active_coupon? && date_valid?
   end
 
   def active_coupon?
@@ -46,7 +54,7 @@ class DiscountEngine
   end
 
   def applicable_to_outlet?(outlet_id)
-    not coupon.applicable_outlet_ids.include?(outlet_id)
+    !coupon.applicable_outlet_ids.include?(outlet_id)
   end
 
   def apply_bogo_discount
@@ -54,5 +62,6 @@ class DiscountEngine
   end
 
   private
+
   attr_reader :coupon, :cart
 end

@@ -1,7 +1,7 @@
-require_relative "support/spec_helper"
+require_relative 'support/spec_helper'
 
 describe Product do
-  before do 
+  before do
     @json = JSON.parse('{
         "product_id": 1,
         "quantity": 1,
@@ -9,7 +9,7 @@ describe Product do
       }')
   end
 
-  it "Should take a json object and create a product" do
+  it 'Should take a json object and create a product' do
     product = Product.new(@json)
     product.product_id.must_equal 1
     product.quantity.must_equal 1

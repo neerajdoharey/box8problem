@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 group :development do
-	gem "minitest"
-	gem "rubocop"
-	gem "bundle-audit"
+  gem 'bundle-audit'
+  gem 'minitest'
+  gem 'rubocop'
 end
-

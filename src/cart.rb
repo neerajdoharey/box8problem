@@ -1,3 +1,4 @@
+# Cart class stores products 
 class Cart
   def initialize
     @cart_items ||= []
@@ -13,7 +14,7 @@ class Cart
   end
 
   def cost
-    items.inject(0){|sum, item| sum + (item.quantity * item.unit_cost) }
+    items.inject(0) { |sum, item| sum + (item.quantity * item.unit_cost) }
   end
 
   def size

@@ -11,7 +11,7 @@ class Bogo < Coupons
   end
 
   def select_discount_stretagy
-    if cart.items.first.quantity == cart.items.last.quantity 
+    if cart.items.first.quantity == cart.items.last.quantity
       lowest_cost
     else
       lowest_product_cost
@@ -19,16 +19,17 @@ class Bogo < Coupons
   end
 
   private
+
   def lowest_cost
-    cart.items.map{|item| item.quantity * item.unit_cost }.min
+    cart.items.map { |item| item.quantity * item.unit_cost }.min
   end
 
   def lowest_product_cost
-    cart.items.map {|i| i.unit_cost * pairs }.min
+    cart.items.map { |i| i.unit_cost * pairs }.min
   end
 
   def pairs
-    cart.items.map{|i| i.quantity }.min
+    cart.items.map(&:quantity).min
   end
 
   attr_reader :cart

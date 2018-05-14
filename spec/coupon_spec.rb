@@ -1,4 +1,4 @@
-require_relative "support/spec_helper"
+require_relative 'support/spec_helper'
 
 describe Coupons do
   before do
@@ -17,7 +17,7 @@ describe Coupons do
     }')
   end
 
-  it "Should create queriable Percentage discount coupon objects" do
+  it 'Should create queriable Percentage discount coupon objects' do
     coupon = Coupons.create(@json)
     coupon.must_respond_to(:id)
     coupon.must_respond_to(:type)

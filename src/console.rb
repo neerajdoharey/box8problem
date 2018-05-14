@@ -1,5 +1,5 @@
 class Console
   def write(message)
-    puts message
+    print message
   end
 end

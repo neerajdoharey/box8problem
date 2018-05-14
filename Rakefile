@@ -1,7 +1,7 @@
-task :test do 
-	desc 'Run all tests'
-  FileList['spec/*_spec.rb'].each{|f| system "ruby #{f}"}
+task :test do
+  desc 'Run all tests'
+  FileList['spec/*_spec.rb'].each { |f| system "ruby #{f}" }
 end
 
-desc "All tests"
+desc 'All tests'
 task 'test'
